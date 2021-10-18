@@ -1,0 +1,30 @@
+.text-container {
+  width: 60%;
+}
+.text-container p:nth-child(2),
+p:nth-child(3) {
+  margin: 0;
+}
+.summary-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 2px dashed #3f3d56;
+  border-radius: 15px;
+  margin-top: 30px;
+  padding: 10px;
+}
+.summary-container img {
+  max-width: 150px;
+}
+.comment-container {
+  margin-left: 30px;
+  text-align: left;
+}
+.comment-container h3 {
+  margin: 0;
+  margin-top: 20px;
+}
+.comment-container p:last-child {
+  margin-top: 0;
+}
