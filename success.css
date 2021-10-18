@@ -16,10 +16,28 @@ p:nth-child(3) {
 }
 .summary-container img {
   max-width: 150px;
+  flex-grow: 1;
+}
+.summary-container form {
+  align-self: flex-end;
+  flex-grow: 1;
+}
+.summary-container form input {
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  color: #ffffff;
+  background: #6c63ff;
+  border: none;
+}
+.summary-container form input:hover {
+  cursor: pointer;
+  background: #3f3d56;
 }
 .comment-container {
   margin-left: 30px;
   text-align: left;
+  flex-grow: 3;
 }
 .comment-container h3 {
   margin: 0;

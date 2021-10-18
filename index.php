@@ -3,6 +3,7 @@ session_start();
 $form = ["username" => "", "email" => "", "issue" => "", "comment" => ""];
 $_SESSION["form"] = &$form;
 $message = "";
+
 function getAndSanitizeValue()
 {
     global $form;
@@ -14,6 +15,7 @@ function getAndSanitizeValue()
     }
     return $form;
 }
+
 function validateValue()
 {
     global $form, $message;
@@ -25,12 +27,12 @@ function validateValue()
     }
     return $message;
 };
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $form = getAndSanitizeValue();
     $message = validateValue();
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -66,6 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <p><?= $message ?></p>
         </div>
     </div>
+    <p><?php print_r($_SESSION["form"]) ?></p>
 </body>
 
 </html>

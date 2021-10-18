@@ -32,10 +32,13 @@ $form = $_SESSION["form"];
                     <h3><?= strtoupper($form["username"]) ?></h3>
                     <p><?= $form["email"] ?></p>
                 </div>
+                <form method="get" action="index.php">
+                    <input type="submit" name="edit" value="Edit">
+                </form>
             </div>
         </div>
     </div>
-
+    <p><?php print_r($_SESSION["form"]) ?></p>
 </body>
 
 </html>
