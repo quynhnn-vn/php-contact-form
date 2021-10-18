@@ -1,6 +1,10 @@
 <?php
 session_start();
-$form = $_SESSION["form"];
+if ($_SESSION["form"]) {
+    $form = $_SESSION["form"];
+} else {
+    $form = $_SESSION["edit"];
+}
 ?>
 
 <!DOCTYPE html>
@@ -32,13 +36,12 @@ $form = $_SESSION["form"];
                     <h3><?= strtoupper($form["username"]) ?></h3>
                     <p><?= $form["email"] ?></p>
                 </div>
-                <form method="get" action="index.php">
+                <form method="get" action="edit.php">
                     <input type="submit" name="edit" value="Edit">
                 </form>
             </div>
         </div>
     </div>
-    <p><?php print_r($_SESSION["form"]) ?></p>
 </body>
 
 </html>

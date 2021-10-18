@@ -1,5 +1,5 @@
 .text-container {
-  width: 60%;
+  width: 50%;
 }
 .text-container p:nth-child(2),
 p:nth-child(3) {
@@ -23,7 +23,7 @@ p:nth-child(3) {
   flex-grow: 1;
 }
 .summary-container form input {
-  width: 100px;
+  width: 70px;
   height: 40px;
   border-radius: 5px;
   color: #ffffff;

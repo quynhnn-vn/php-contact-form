@@ -2,6 +2,10 @@
 session_start();
 $form = ["username" => "", "email" => "", "issue" => "", "comment" => ""];
 $_SESSION["form"] = &$form;
+if (isset($_SESSION["edit"])) {
+    $form = $_SESSION["edit"];
+}
+unset($_SESSION["edit"]);
 $message = "";
 
 function getAndSanitizeValue()
@@ -19,7 +23,7 @@ function getAndSanitizeValue()
 function validateValue()
 {
     global $form, $message;
-    if (filter_var($form["email"], FILTER_VALIDATE_EMAIL)) {
+    if (isset($_SESSION["form"]) && filter_var($form["email"], FILTER_VALIDATE_EMAIL)) {
         header("Location: success.php");
         exit;
     } else {
@@ -68,7 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <p><?= $message ?></p>
         </div>
     </div>
-    <p><?php print_r($_SESSION["form"]) ?></p>
 </body>
 
 </html>
